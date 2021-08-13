@@ -1,6 +1,6 @@
 {
 	"name": "@leonardssh/use-lanyard",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "🚀 Lanyard with Composition API for Vue",
 	"author": "LeonardSSH <leonardssh22@gmail.com> (https://leonard.sh)",
 	"license": "MIT",
