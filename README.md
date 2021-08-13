@@ -2,18 +2,25 @@
   <img src="https://i.imgur.com/ngMRSPs.png" alt="Logo" />
 </p>
 
-  <h3 align="center"><b>Vue Use Lanyard</b></h3>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@leonardssh/use-lanyard">
+    <img src="https://img.shields.io/npm/v/@leonardssh/use-lanyard.svg?maxAge=3600&color=crimson&logo=npm" alt="NPM version" />
+  </a>
+  <a href="https://www.npmjs.com/package/@leonardssh/use-lanyard">
+    <img src="https://img.shields.io/npm/dt/@leonardssh/use-lanyard.svg?maxAge=3600&logo=npm" alt="NPM downloads" />
+  </a>
+</p>
 
-  <p align="center">
-    Use Lanyard API easily in your Vue app!
-    <br />
-    <br />
-    <a href="https://github.com/LeonardSSH/use-lanyard/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/LeonardSSH/use-lanyard/issues">Request Feature</a>
-    ·
-    <a href="https://github.com/Phineas/lanyard">What Is Lanyard</a>
-  </p>
+<h3 align="center"><b>Vue Use Lanyard</b></h3>
+
+<p align="center">
+  Use Lanyard API easily in your Vue app!
+  <br /> <br />
+  <a href="https://github.com/LeonardSSH/use-lanyard/issues">Report Bug</a>
+  ·
+  <a href="https://github.com/LeonardSSH/use-lanyard/issues">Request Feature</a>
+  ·
+  <a href="https://github.com/Phineas/lanyard">What Is Lanyard</a>
 </p>
 
 <br>
