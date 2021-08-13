@@ -128,5 +128,9 @@
 	},
 	"bugs": {
 		"url": "https://github.com/LeonardSSH/use-lanyard/issues"
-	}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"private": false
 }
