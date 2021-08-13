@@ -52,7 +52,7 @@ const { success, data, error } = await useLanyard({
 > Using with websocket:
 
 ```ts
-import { useLanyard } from '@leonardssh/use-lanyard';
+import { useLanyard, LanyardData } from '@leonardssh/use-lanyard';
 
 await useLanyard({
 	userId: 'USER_ID',
