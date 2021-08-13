@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/QIKcxNK.png" alt="Logo" />
+  <img src="https://i.imgur.com/ngMRSPs.png" alt="Logo" />
 </p>
 
   <h3 align="center"><b>Vue Use Lanyard</b></h3>
