@@ -1,0 +1,132 @@
+{
+	"name": "@leonardssh/use-lanyard",
+	"version": "1.0.0",
+	"description": "🚀 Lanyard with Composition API for Vue",
+	"author": "LeonardSSH <leonardssh22@gmail.com> (https://leonard.sh)",
+	"license": "MIT",
+	"main": "dist/use-lanyard.cjs.js",
+	"module": "dist/use-lanyard.esm-bundler.js",
+	"types": "dist/use-lanyard.d.ts",
+	"unpkg": "dist/use-lanyard.global.js",
+	"jsdelivr": "dist/use-lanyard.global.js",
+	"exports": {
+		".": {
+			"import": "./dist/use-lanyard.esm-bundler.js",
+			"require": "./dist/use-lanyard.cjs.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"sideEffects": false,
+	"files": [
+		"dist/*.js",
+		"dist/use-lanyard.d.ts",
+		"LICENSE",
+		"README.md"
+	],
+	"keywords": [
+		"vue",
+		"composition",
+		"api",
+		"setup",
+		"typed",
+		"typescript",
+		"ts",
+		"type",
+		"safe",
+		"lanyard"
+	],
+	"scripts": {
+		"clean": "node scripts/clean-dist.mjs",
+		"clean:types": "rm -rf types",
+		"build": "pnpm clean && rollup -c && pnpm build:types && pnpm build:dts && pnpm clean:types",
+		"build:types": "tsc --emitDeclarationOnly",
+		"build:dts": "api-extractor run --local --verbose",
+		"prepare": "husky install .github/husky",
+		"format": "prettier --write src/**/*.ts",
+		"lint": "eslint packages --ext js,ts --fix",
+		"commit": "git-cz",
+		"cz": "git-cz"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^13.1.0",
+		"@commitlint/config-conventional": "^13.1.0",
+		"@microsoft/api-extractor": "^7.18.5",
+		"@rollup/plugin-commonjs": "^20.0.0",
+		"@rollup/plugin-node-resolve": "^13.0.4",
+		"@rollup/plugin-typescript": "^8.2.5",
+		"@types/node": "^16.6.1",
+		"@typescript-eslint/eslint-plugin": "^4.29.1",
+		"@typescript-eslint/parser": "^4.29.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^7.32.0",
+		"husky": "^7.0.1",
+		"lint-staged": "^11.1.2",
+		"pascalcase": "^1.0.0",
+		"prettier": "^2.3.2",
+		"pretty-quick": "^3.1.1",
+		"rollup": "^2.56.2",
+		"rollup-plugin-terser": "^7.0.2",
+		"rollup-plugin-typescript2": "^0.30.0",
+		"ts-node": "^10.2.0",
+		"typescript": "^4.3.5",
+		"vue": "^3.2.2"
+	},
+	"dependencies": {
+		"@vueuse/core": "^5.3.0",
+		"vue-demi": "latest"
+	},
+	"peerDependencies": {
+		"@vue/composition-api": "^1.0.0-rc.1",
+		"vue": "^2.0.0 || >=3.0.0"
+	},
+	"peerDependenciesMeta": {
+		"@vue/composition-api": {
+			"optional": true
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*.{mjs,js,ts}": "eslint --fix --ext mjs,js,ts"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"prettier": {
+		"$schema": "http://json.schemastore.org/prettierrc",
+		"endOfLine": "lf",
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 2,
+		"trailingComma": "none",
+		"useTabs": true,
+		"arrowParens": "always",
+		"bracketSpacing": true,
+		"printWidth": 80,
+		"overrides": [
+			{
+				"files": [
+					"*.yml"
+				],
+				"options": {
+					"tabWidth": 2,
+					"useTabs": false
+				}
+			}
+		]
+	},
+	"homepage": "https://github.com/LeonardSSH/use-lanyard#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LeonardSSH/use-lanyard.git"
+	},
+	"bugs": {
+		"url": "https://github.com/LeonardSSH/use-lanyard/issues"
+	}
+}
