@@ -43,7 +43,7 @@
 		"build:dts": "api-extractor run --local --verbose",
 		"prepare": "husky install .github/husky",
 		"format": "prettier --write src/**/*.ts",
-		"lint": "eslint packages --ext js,ts --fix",
+		"lint": "eslint src --ext js,ts --fix",
 		"commit": "git-cz",
 		"cz": "git-cz"
 	},

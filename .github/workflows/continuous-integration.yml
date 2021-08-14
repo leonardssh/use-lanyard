@@ -1,0 +1,72 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  Linting:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v16 with NPM Registry
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      - name: Setup pnpm v6
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.11.5
+
+      - name: Restore CI Cache
+        uses: actions/cache@v2.1.6
+        id: cache-restore
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install Dependencies
+        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --frozen-lockfile
+
+      - name: Run ESLint
+        run: pnpm lint --fix=false
+
+  Building:
+    name: Building Source Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v2
+
+      - name: Use Node.js v16 with NPM Registry
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      - name: Setup pnpm v6
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.11.5
+
+      - name: Restore CI Cache
+        uses: actions/cache@v2.1.6
+        id: cache-restore
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+      - name: Install Dependencies
+        if: ${{ !steps.cache-restore.outputs.cache-hit }}
+        run: pnpm i --frozen-lockfile
+
+      - name: Build Code
+        run: pnpm build
