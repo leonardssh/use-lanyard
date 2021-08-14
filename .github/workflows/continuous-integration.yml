@@ -27,13 +27,11 @@ jobs:
 
       - name: Restore CI Cache
         uses: actions/cache@v2.1.6
-        id: cache-restore
         with:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install Dependencies
-        if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: pnpm i --frozen-lockfile
 
       - name: Run ESLint
@@ -59,13 +57,11 @@ jobs:
 
       - name: Restore CI Cache
         uses: actions/cache@v2.1.6
-        id: cache-restore
         with:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install Dependencies
-        if: ${{ !steps.cache-restore.outputs.cache-hit }}
         run: pnpm i --frozen-lockfile
 
       - name: Build Code
