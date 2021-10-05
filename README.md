@@ -66,7 +66,7 @@ await useLanyard({
 ### 🎉 Thanks
 
 - [Phineas](https://github.com/Phineas/) - Creator of Lanyard API
-- [barbarbar338](https://github.com/barbarbar338/react-use-lanyard) - Creator of [react-use-lanyard](https://github.dev/barbarbar338/react-use-lanyard)
+- [barbarbar338](https://github.com/barbarbar338/react-use-lanyard) - Creator of [react-use-lanyard](https://github.com/barbarbar338/react-use-lanyard)
 - [eggsy](https://github.com/eggsy) - Creator of [vue-lanyard](https://github.com/eggsy/vue-lanyard/)
 
 ## 👨‍💻 Contributing
